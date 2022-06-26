@@ -9,7 +9,6 @@ const TableSection = React.lazy(() => import("./Table/TableSection"))
 const SqlEditor = () => {
     const [query, setQuery] = useState("")
     const [value, setValue] = useState("select * from customers")
-    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <>
@@ -46,11 +45,8 @@ const SqlEditor = () => {
                         setQuery={setQuery}
                         value={value}
                         setValue={setValue}
-                        isOpen={isOpen}
                     />
-                    {query ? (
-                        <TableSection query={query} isOpen={isOpen} />
-                    ) : null}
+                    {query ? <TableSection /> : null}
                 </Suspense>
             </div>
         </>
