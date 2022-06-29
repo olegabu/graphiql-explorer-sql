@@ -5,13 +5,13 @@ const Table = ({ columns, data }) => {
     console.log("Table data", data)
     return (
         <div className="shadow overflow-auto border-b border-gray-200 sm:rounded-lg">
-            <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-primary-dark">
+            <table className="min-w-full divide-y divide-gray-200 table">
+                <thead className="thead">
                     <tr>
                         {columns.map((column) => (
                             <th
                                 scope="col"
-                                className="px-6 py-4 text-left text-xs font-medium text-white  uppercase tracking-wider"
+                                className="px-6 py-4 text-left text-xs font-medium text-black uppercase tracking-wider"
                                 key={column.accessor}
                             >
                                 <span>{column.Header}</span>

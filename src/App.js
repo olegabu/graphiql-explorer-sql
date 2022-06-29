@@ -10,10 +10,10 @@ const App = () => {
     }
 
     return (
-        <>
+        <div className='wrapper'>
             {sqlEditorVisible && <SqlEditor />}
             <Console handleSqlEditorVisible={handleSqlEditorVisible} />
-        </>
+        </div>
     )
 }
 

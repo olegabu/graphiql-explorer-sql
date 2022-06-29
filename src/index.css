@@ -1,3 +1,31 @@
 .doc-explorer-title {
     padding: 0 !important;
 }
+
+.wrapper {
+    display: flex;
+}
+
+.sql-editor {
+    width: 35vw
+}
+
+.sql-editor > * {
+    width: 100%;
+}
+
+.btn {
+    background: linear-gradient(#f9f9f9, #ececec);
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 20%), 0 1px 0 rgb(255 255 255 / 70%), inset 0 1px #fff;
+    color: #555;
+    cursor: pointer;
+}
+
+.thead {
+    background: linear-gradient(#f7f7f7, #e2e2e2)
+}
+
+.table {
+    font-size: 12px;
+}

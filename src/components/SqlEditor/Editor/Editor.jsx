@@ -45,10 +45,10 @@ const Editor = ({ setQuery, value, setValue }) => {
                 />
             </label>
             <div>
-                <Button handleClick={onSubmit} iconName="fas fa-play">
+                <Button handleClick={onSubmit} iconName="fas fa-play" className='btn'>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 inline mr-2"
+                        className="h-6 w-6 inline mr-1"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                     >

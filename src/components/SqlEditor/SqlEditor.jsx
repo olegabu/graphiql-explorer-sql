@@ -11,7 +11,7 @@ const SqlEditor = () => {
     const [value, setValue] = useState("select * from customers")
 
     return (
-        <>
+        <div className='sql-editor'>
             <Toaster
                 position="top-center"
                 gutter={8}
@@ -49,7 +49,7 @@ const SqlEditor = () => {
                     {query ? <TableSection /> : null}
                 </Suspense>
             </div>
-        </>
+        </div>
     )
 }
 
