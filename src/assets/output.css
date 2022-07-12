@@ -449,7 +449,7 @@ button,
  * as it triggers the better focus styles even for links, which still use a dotted
  * outline in Firefox by default.
  */
- 
+
 :-moz-focusring {
 	outline: auto;
 }
@@ -516,14 +516,14 @@ samp {
  *    CSS Remedy, with `svg` added as well.
  *
  *    https://github.com/mozdevs/cssremedy/issues/14
- * 
+ *
  * 2. Add `vertical-align: middle` to align replaced elements more
  *    sensibly by default when overriding `display` by adding a
  *    utility like `inline`.
  *
  *    This can trigger a poorly considered linting error in some
  *    tools but is included by design.
- * 
+ *
  *    https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210
  */
 
@@ -745,11 +745,6 @@ video {
 	        filter: var(--tw-filter);
 }
 
-.active {
-	--tw-bg-opacity: 1;
-	background-color: rgba(75, 85, 99, var(--tw-bg-opacity));
-}
-
 @media (min-width: 640px) {
 
 	.sm\:rounded-lg {
@@ -763,4 +758,44 @@ video {
 		margin-left: 3rem;
 		margin-right: 3rem;
 	}
+}
+
+.variable-editor-title {
+	bottom: 0px;
+	text-align: center;
+	background: none;
+	border-top: 1px solid rgb(214, 214, 214);
+	border-bottom: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.graphiql-explorer-actions {
+	margin: 4px 0 0 -8px!important;
+	width: calc(100% + 16px)!important;
+	padding: 10px!important;
+}
+
+.graphiql-explorer-actions > span {
+	font-variant-caps: normal;
+	font-weight: 500;
+	font-size: 12px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: #777;
+}
+
+.graphiql-explorer-actions select {
+	font-variant-caps: normal;
+	font-weight: 400;
+	border: 1px solid #cbd5e1;
+	font-size: 14px;
+	padding: 5px 8px;
+	border-radius: 4px;
+	margin-left: 8px;
+	margin-right: 8px;
+	height: 32px;
+	box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 1px 2px 0 rgb(0 0 0 / 5%);
+	color: #777;
 }
