@@ -3,7 +3,8 @@
 import React, { Component } from "react"
 import GraphiQL from "graphiql"
 import GraphiQLExplorer from "graphiql-explorer"
-import { buildClientSchema, getIntrospectionQuery, parse } from "graphql"
+import { parse, buildClientSchema, getIntrospectionQuery } from "graphql"
+import { createGraphiQLFetcher } from '@graphiql/toolkit';
 
 import {
     makeDefaultArg,
@@ -13,7 +14,13 @@ import {
 import "graphiql/graphiql.css"
 import "./Console.css"
 
-function fetcher(params) {
+const fetcher = createGraphiQLFetcher({
+    url: 'https://starknet-archive.hasura.app/v1/graphql',
+    subscriptionUrl: 'wss://starknet-archive.hasura.app/v1/graphql',
+});
+
+
+function getData(params) {
     return fetch("https://starknet-archive.hasura.app/v1/graphql", {
         method: "POST",
         headers: {
@@ -252,7 +259,7 @@ class Console extends Component {
     state = { schema: null, query: DEFAULT_QUERY, explorerIsOpen: true }
 
     componentDidMount() {
-        fetcher({
+        getData({
             query: getIntrospectionQuery(),
         }).then((result) => {
             const editor = this._graphiql.getQueryEditor()
