@@ -263,10 +263,12 @@ class Console extends Component {
             query: getIntrospectionQuery(),
         }).then((result) => {
             const editor = this._graphiql.getQueryEditor()
-            editor.setOption("extraKeys", {
-                ...(editor.options.extraKeys || {}),
-                "Shift-Alt-LeftClick": this._handleInspectOperation,
-            })
+            if (editor) {
+                editor.setOption("extraKeys", {
+                    ...(editor.options.extraKeys || {}),
+                    "Shift-Alt-LeftClick": this._handleInspectOperation,
+                })
+            }
 
             this.setState({ schema: buildClientSchema(result.data) })
         })
