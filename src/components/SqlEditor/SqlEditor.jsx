@@ -2,16 +2,26 @@ import React, { useState, Suspense } from "react"
 import "../../assets/output.css"
 import { Toaster } from "react-hot-toast"
 import Loader from "../UI/Loader"
+import './sqlEditor.css';
 
 const Editor = React.lazy(() => import("./Editor/Editor"))
 const TableSection = React.lazy(() => import("./Table/TableSection"))
 
-const SqlEditor = () => {
+const SqlEditor = ({ onClose }) => {
     const [query, setQuery] = useState("")
     const [value, setValue] = useState("select * from customers")
 
     return (
         <div className='sql-editor'>
+          <div className="sql-editor-content">
+            <div className="header">
+              <div className="header-title">
+                SQL Editor
+              </div>
+              <div className="doc-explorer-rhs" onClick={onClose}>
+                <div className="close-icon">✕</div>
+              </div>
+            </div>
             <Toaster
                 position="top-center"
                 gutter={8}
@@ -39,7 +49,7 @@ const SqlEditor = () => {
                     },
                 }}
             />
-            <div>
+            <div className="sql-editor-container">
                 <Suspense fallback={<Loader />}>
                     <Editor
                         setQuery={setQuery}
@@ -49,6 +59,7 @@ const SqlEditor = () => {
                     {query ? <TableSection /> : null}
                 </Suspense>
             </div>
+          </div>
         </div>
     )
 }

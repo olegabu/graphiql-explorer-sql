@@ -1,0 +1,110 @@
+.sql-editor-content {
+  height: 100%;
+  position: relative;
+  z-index: 8;
+  box-shadow: 0 0 8px rgb(0 0 0 / 15%);
+}
+
+.header {
+  cursor: default;
+  display: flex;
+  height: 34px;
+  line-height: 14px;
+  padding: 8px 8px 5px;
+  position: relative;
+  user-select: none;
+  box-sizing: unset;
+}
+
+.header-title {
+  flex: 1 1;
+  font-weight: bold;
+  overflow-x: hidden;
+  padding: 10px 0 10px 10px;
+  text-align: center;
+  text-overflow: ellipsis;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  white-space: nowrap;
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 18px;
+  margin: -7px -8px -6px 0;
+  padding: 18px 16px 15px 12px;
+  background: 0;
+  border: 0;
+  line-height: 14px;
+}
+
+.sql-editor-container {
+  border-top: 1px solid #d6d6d6;
+}
+
+/* editor */
+.space {
+  content: "";
+  height: 20px;
+  width: 42px;
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+}
+
+.ace_gutter {
+  width: 42px !important;
+}
+
+.ace_gutter-layer {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  color: #666;
+  width: 42px !important;
+}
+
+.ace_gutter-cell {
+  padding: 0 3px 0 5px;
+}
+
+.button-wrapper {
+  background: #eeeeee;
+  border-bottom: 1px solid #d6d6d6;
+  border-top: 1px solid #e0e0e0;
+  padding: 6px 0 8px 43px;
+}
+
+.button-wrapper button {
+  margin: 0;
+}
+
+.table-wrapper th {
+  padding: 8px 4px;
+  min-width: 115px;
+}
+
+.table-wrapper td:first-child {
+  padding-left: 8px;
+}
+
+.ace_gutter-cell::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -100%;
+  background-color: #e8e8e8;
+}
+
+.left-side {
+  background-color: #e8e8e8;
+  width: 41px;
+  height: 20px;
+}
+
+.docExplorerResizer {
+  display: none;
+}
+
+

@@ -9,9 +9,13 @@ const App = () => {
         setSqlEditorVisible(!sqlEditorVisible)
     }
 
+    const closeSqlEditor = () => {
+        setSqlEditorVisible(false);
+    }
+
     return (
         <div className='wrapper'>
-            {sqlEditorVisible && <SqlEditor />}
+            {sqlEditorVisible && <SqlEditor onClose={closeSqlEditor} />}
             <Console handleSqlEditorVisible={handleSqlEditorVisible} />
         </div>
     )
