@@ -602,10 +602,6 @@ video {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
-.mx-6 {
-	margin-left: 1.5rem;
-	margin-right: 1.5rem;
-}
 .my-12 {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
@@ -743,17 +739,4 @@ video {
 .filter {
 	-webkit-filter: var(--tw-filter);
 	        filter: var(--tw-filter);
-}
-@media (min-width: 640px) {
-
-	.sm\:rounded-lg {
-		border-radius: 0.5rem;
-	}
-}
-@media (min-width: 1024px) {
-
-	.lg\:mx-12 {
-		margin-left: 3rem;
-		margin-right: 3rem;
-	}
 }
