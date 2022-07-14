@@ -165,13 +165,11 @@ const TableSection = React.memo(() => {
         )
     return (
         <>
-            <section className="col-start-1 col-end-3 row-start-3 row-end-4 text-white mx-6 my-12 lg:mx-12 overflow-hidden">
+            <section className="table-wrapper col-start-1 col-end-3 row-start-3 row-end-4 text-white my-12 overflow-hidden">
                 {data.length > 0 ? (
-                    <>
-                        <Table columns={columns} data={queryData} />
-                    </>
+                  <Table columns={columns} data={queryData} />
                 ) : (
-                    <img src={Loader} className="w-20 mx-auto" alt="loader" />
+                  <img src={Loader} className="w-20 mx-auto" alt="loader" />
                 )}
             </section>
         </>

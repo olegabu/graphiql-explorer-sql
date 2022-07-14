@@ -18,7 +18,8 @@ const Editor = ({ setQuery, value, setValue }) => {
     }
 
     return (
-        <main className="col-start-1 col-end-3 row-start-2 row-end-3 mx-6 my-12 lg:mx-12">
+        <main className="col-start-1 col-end-3 row-start-2 row-end-3">
+          <div className="space" />
             <label htmlFor="editor">
                 <AceEditor
                     id="editor"
@@ -26,7 +27,7 @@ const Editor = ({ setQuery, value, setValue }) => {
                     mode="mysql"
                     theme="github"
                     name="editor"
-                    fontSize={16}
+                    fontSize={13}
                     minLines={15}
                     maxLines={10}
                     width="100%"
@@ -44,7 +45,7 @@ const Editor = ({ setQuery, value, setValue }) => {
                     showLineNumbers
                 />
             </label>
-            <div>
+            <div className="button-wrapper">
                 <Button handleClick={onSubmit} iconName="fas fa-play" className='btn'>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
