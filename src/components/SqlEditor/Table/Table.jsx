@@ -9,11 +9,11 @@ const Table = ({ columns, data }) => (
                 <tr>
                     {columns.map((column) => (
                         <th
-                            scope="col"
-                            className="px-6 py-4 text-left text-xs font-medium text-black uppercase tracking-wider head-col"
-                            key={column.accessor}
+                          scope="col"
+                          className="px-6 py-4 text-left text-xs font-medium text-black uppercase tracking-wider head-col"
+                          key={column.accessor}
                         >
-                            <span>{column.Header}</span>
+                            <span>{column.title}</span>
                         </th>
                     ))}
                 </tr>

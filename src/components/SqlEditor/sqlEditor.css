@@ -107,4 +107,8 @@
   display: none;
 }
 
+.sql-editor-loader {
+  width: unset !important;
+}
+
 
