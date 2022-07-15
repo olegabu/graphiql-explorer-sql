@@ -1,17 +1,3 @@
-const TABLE_NAMES = [
-  "categories",
-  "customers",
-  "employee_territories",
-  "employees",
-  "order_details",
-  "orders",
-  "products",
-  "regions",
-  "shippers",
-  "suppliers",
-  "territories",
-];
-
 export const DEFAULT_QUERY = process.env.REACT_APP_DEFAULT_QUERY || `
 
 ## Quick start
@@ -226,5 +212,4 @@ query top_functions {
 `;
 export const GRAPH_QL_URL = process.env.REACT_APP_GRAPH_QL_URL || 'https://starknet-archive.hasura.app/v1/graphql';
 export const GRAPH_QL_SUBSCRIPTION_URL = process.env.REACT_APP_GRAPH_QL_SUBSCRIPTION_URL || 'wss://starknet-archive.hasura.app/v1/graphql';
-
-export default TABLE_NAMES;
+export const SQL_QUERY_URL = process.env.REACT_APP_SQL_QUERY_URL || 'http://localhost:8080/sql-query';

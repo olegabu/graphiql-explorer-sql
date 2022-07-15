@@ -11,10 +11,10 @@ const Editor = ({ setQuery, value, setValue }) => {
     }
 
     const onSubmit = () => {
-        const Z = value
+        const query = value
             .toLowerCase()
             .slice(value.indexOf("from") + "from".length)
-        setQuery(Z.split(" ")[1])
+        setQuery(query.split(" ")[1])
     }
 
     return (
