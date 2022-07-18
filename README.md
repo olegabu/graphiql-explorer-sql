@@ -6,12 +6,20 @@ Sign up at [https://www.onegraph.com](https://www.onegraph.com).
 
 ## Setup
 
-Install dependencies:
+1. Install dependencies:
 
 ```
 npm install
 # or
 yarn install
+```
+
+2. Run the app with mock server:
+
+```
+npm run dev:mock
+# or
+yarn dev:mock
 ```
 
 Run the app:
@@ -20,14 +28,6 @@ Run the app:
 npm run start
 # or
 yarn start
-```
-
-Run the app with mock server:
-
-```
-npm run dev:mock
-# or
-yarn dev:mock
 ```
 
 Your browser will automatically open to http://localhost:3000 with the explorer open.
