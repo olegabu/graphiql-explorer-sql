@@ -9,7 +9,7 @@ Sign up at [https://www.onegraph.com](https://www.onegraph.com).
 1. Install dependencies:
 
 ```
-npm install
+npm install --force
 # or
 yarn install
 ```
