@@ -22,7 +22,17 @@ npm run start
 yarn start
 ```
 
+Start React with mock server:
+
+```
+npm run dev:mock
+# or
+yarn dev:mock
+```
+
 Your browser will automatically open to http://localhost:3000 with the explorer open.
+
+http://localhost:8080/ - mock server
 
 ## Live demo
 
