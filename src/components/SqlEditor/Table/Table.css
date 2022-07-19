@@ -1,3 +1,8 @@
 .head-col {
   color: #666;
 }
+
+.MuiTableRow-root:empty {
+  display: none;
+}
+

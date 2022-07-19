@@ -1,17 +1,17 @@
 {
     "sql-query": {
         "columns": [
-            { "title": "customer ID", "accessor": "customerID" },
-            { "title": "company  Name", "accessor": "companyName" },
-            { "title": "contact  Name", "accessor": "contactName" },
-            { "title": "contact  Title", "accessor": "contactTitle" },
-            { "title": "address", "accessor": "address" },
-            { "title": "city", "accessor": "city" },
-            { "title": "region", "accessor": "region" },
-            { "title": "postal  Code", "accessor": "postalCode" },
-            { "title": "country", "accessor": "country" },
-            { "title": "phone", "accessor": "phone" },
-            { "title": "fax", "accessor": "fax" }
+            { "title": "customer ID", "field": "customerID" },
+            { "title": "company  Name", "field": "companyName" },
+            { "title": "contact  Name", "field": "contactName" },
+            { "title": "contact  Title", "field": "contactTitle" },
+            { "title": "address", "field": "address" },
+            { "title": "city", "field": "city" },
+            { "title": "region", "field": "region" },
+            { "title": "postal  Code", "field": "postalCode" },
+            { "title": "country", "field": "country" },
+            { "title": "phone", "field": "phone" },
+            { "title": "fax", "field": "fax" }
         ],
         "data": [
             {

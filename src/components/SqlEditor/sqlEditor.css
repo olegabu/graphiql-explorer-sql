@@ -83,13 +83,12 @@
   margin: 0;
 }
 
-.table-wrapper th {
-  padding: 8px 4px;
-  min-width: 115px;
+.MuiTableCell-root {
+  padding: 9px !important;
 }
 
-.table-wrapper td:first-child {
-  padding-left: 8px;
+.MuiTableCell-head {
+  text-transform: capitalize;
 }
 
 .ace_gutter-cell::before {
