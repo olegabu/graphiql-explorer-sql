@@ -1,4 +1,5 @@
 import React, { useState, Suspense } from 'react';
+import { Resizable } from 're-resizable';
 
 import { SQL_QUERY_URL } from '../../constants/constants';
 import Loader from '../UI/Loader';
@@ -40,36 +41,44 @@ const SqlEditor = ({ onClose }) => {
   }
 
   return (
-    <div className='sql-editor'>
-      <div className="sql-editor-content">
-        <div className="header">
-          <div className="header-title">
-            SQL Editor
+    <Resizable
+      defaultSize={{ width: '30vw' }}
+      maxWidth="50vw"
+      axis="x"
+      enable={{ right: true }}
+      handleWrapperClass="sql-editor-handle-wrapper"
+    >
+      <div className='sql-editor'>
+        <div className="sql-editor-content">
+          <div className="header">
+            <div className="header-title">
+              SQL Editor
+            </div>
+            <div className="doc-explorer-rhs" onClick={onClose}>
+              <div className="close-icon">✕</div>
+            </div>
           </div>
-          <div className="doc-explorer-rhs" onClick={onClose}>
-            <div className="close-icon">✕</div>
+          <div className="sql-editor-container">
+            <Suspense fallback={<Loader className="sql-editor-loader" />}>
+              <Editor
+                setQuery={handleRunQuery}
+                value={value}
+                setValue={setValue}
+              />
+              {
+                isRunQuery && (
+                  <TableSection
+                    isFetching={isFetching}
+                    isError={isError}
+                    result={result}
+                  />
+                )
+              }
+            </Suspense>
           </div>
-        </div>
-        <div className="sql-editor-container">
-          <Suspense fallback={<Loader className="sql-editor-loader" />}>
-            <Editor
-              setQuery={handleRunQuery}
-              value={value}
-              setValue={setValue}
-            />
-            {
-              isRunQuery && (
-                <TableSection
-                  isFetching={isFetching}
-                  isError={isError}
-                  result={result}
-                />
-              )
-            }
-          </Suspense>
         </div>
       </div>
-    </div>
+    </Resizable>
   )
 }
 

@@ -1,3 +1,7 @@
+.sql-editor-handle-wrapper div {
+  z-index: 9;
+}
+
 .sql-editor-content {
   height: 100%;
   position: relative;

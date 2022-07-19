@@ -10,6 +10,7 @@
     "graphiql-explorer": "^0.9.0",
     "graphql": "^16.5.0",
     "graphql-ws": "^5.9.1",
+    "re-resizable": "^6.9.9",
     "react": "16.7.0-alpha.2",
     "react-ace": "^9.5.0",
     "react-dom": "16.7.0-alpha.2",
