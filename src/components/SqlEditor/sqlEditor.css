@@ -32,6 +32,7 @@
   -ms-user-select: text;
   user-select: text;
   white-space: nowrap;
+  font-size: 14px;
 }
 
 .close-icon {

@@ -33,7 +33,7 @@
 }
 
 .MuiTableCell-head {
-  text-transform: capitalize;
+  text-transform: lowercase;
 }
 
 .MuiTableCell-footer {
@@ -49,6 +49,17 @@
 
 .MuiTableCell-footer .MuiIconButton-root:hover {
   background-color: unset;
+}
+
+.MuiTablePagination-select.MuiInputBase-input {
+  font-feature-settings: normal;
+  font-variant-caps: normal;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  color: #777;
+  font-family: Consolas, Inconsolata, "Droid Sans Mono", Monaco, monospace;
 }
 
 
