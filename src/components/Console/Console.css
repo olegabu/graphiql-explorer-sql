@@ -2,6 +2,11 @@
     height: 100vh;
 }
 
+.graphiql-container .CodeMirror-lines {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 .docExplorerShow {
     display: flex;
     align-items: center;

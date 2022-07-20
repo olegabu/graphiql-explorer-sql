@@ -6,3 +6,49 @@
   display: none;
 }
 
+.table-wrapper {
+  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
+  font-size: 13px;
+  /*background-color: #f6f7f8;*/
+}
+
+.MTableHeader-header-6 {
+  /*background-color: #f6f7f8 !important;*/
+}
+
+.table-wrapper td {
+  line-height: inherit;
+}
+
+.MuiPaper-root {
+  /*background-color: unset !important;*/
+}
+
+.MuiPaper-root > div > div:first-child {
+  display: none;
+}
+
+.MuiTableCell-root {
+  padding: 3px 9px !important;
+}
+
+.MuiTableCell-head {
+  text-transform: capitalize;
+}
+
+.MuiTableCell-footer {
+  padding: 10px !important;
+  background-color: white;
+  border-bottom: unset !important;
+}
+
+.MuiTableCell-footer .MuiTablePagination-toolbar {
+  min-height: 32px;
+  height: 32px;
+}
+
+.MuiTableCell-footer .MuiIconButton-root:hover {
+  background-color: unset;
+}
+
+

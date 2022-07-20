@@ -51,7 +51,7 @@
 /* editor */
 .space {
   content: "";
-  height: 20px;
+  height: 8px;
   width: 42px;
   border-right: 1px solid #ddd;
   background-color: #f7f7f7;
@@ -80,15 +80,26 @@
 }
 
 .button-wrapper button {
-  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 3px 11px 5px;
+  font-family: system, -apple-system, 'San Francisco', '.SFNSDisplay-Regular', 'Segoe UI', Segoe, 'Segoe WP', 'Helvetica Neue', helvetica, 'Lucida Grande', arial, sans-serif;
+  font-size: 14px;
 }
 
-.MuiTableCell-root {
-  padding: 9px !important;
+.ace_editor,
+.ace_scroller,
+.ace_content {
+  line-height: inherit !important;
 }
 
-.MuiTableCell-head {
-  text-transform: capitalize;
+.ace_scroller {
+  left: 42px !important;
+}
+
+.ace_content {
+  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
+  font-size: 13px;
 }
 
 .ace_gutter-cell::before {

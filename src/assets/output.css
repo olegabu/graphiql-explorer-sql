@@ -561,11 +561,6 @@ video {
 }
 
 *, ::before, ::after {
-	--tw-border-opacity: 1;
-	border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-	--tw-ring-offset-shadow: 0 0 #0000;
-	--tw-ring-shadow: 0 0 #0000;
-	--tw-shadow: 0 0 #0000;
 	--tw-blur: var(--tw-empty,/*!*/ /*!*/);
 	--tw-brightness: var(--tw-empty,/*!*/ /*!*/);
 	--tw-contrast: var(--tw-empty,/*!*/ /*!*/);
@@ -618,9 +613,6 @@ video {
 .flex {
 	display: flex;
 }
-.table {
-	display: table;
-}
 .h-screen {
 	height: 100vh;
 }
@@ -636,43 +628,17 @@ video {
 .w-6 {
 	width: 1.5rem;
 }
-.min-w-full {
-	min-width: 100%;
-}
 .items-center {
 	align-items: center;
 }
 .justify-center {
 	justify-content: center;
 }
-.divide-y > :not([hidden]) ~ :not([hidden]) {
-	--tw-divide-y-reverse: 0;
-	border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-	border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-}
-.divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
-	--tw-divide-opacity: 1;
-	border-color: rgba(229, 231, 235, var(--tw-divide-opacity));
-}
-.overflow-auto {
-	overflow: auto;
-}
 .overflow-hidden {
 	overflow: hidden;
 }
-.border-b {
-	border-bottom-width: 1px;
-}
-.border-gray-200 {
-	--tw-border-opacity: 1;
-	border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-}
 .bg-transparent {
 	background-color: transparent;
-}
-.bg-white {
-	--tw-bg-opacity: 1;
-	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
 .px-4 {
 	padding-left: 1rem;
@@ -682,43 +648,15 @@ video {
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 }
-.px-6 {
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-}
-.py-4 {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-.text-left {
-	text-align: left;
-}
 .text-center {
 	text-align: center;
-}
-.text-xs {
-	font-size: 0.75rem;
-	line-height: 1rem;
 }
 .text-xl {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
 }
-.font-medium {
-	font-weight: 500;
-}
 .font-bold {
 	font-weight: 700;
-}
-.uppercase {
-	text-transform: uppercase;
-}
-.tracking-wider {
-	letter-spacing: 0.05em;
-}
-.text-black {
-	--tw-text-opacity: 1;
-	color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 .text-white {
 	--tw-text-opacity: 1;
@@ -727,10 +665,6 @@ video {
 .text-primary-dark {
 	--tw-text-opacity: 1;
 	color: rgba(0, 74, 124, var(--tw-text-opacity));
-}
-.shadow {
-	--tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .filter {
 	-webkit-filter: var(--tw-filter);

@@ -14,7 +14,7 @@ const SqlEditor = ({ onClose }) => {
   const [isError, setIsError] = useState(false);
   const [isRunQuery, setIsRunQuery] = useState(false);
   const [result, setResult] = useState(null);
-  const [value, setValue] = useState('select * from customers');
+  const [value, setValue] = useState('select * from customers \n\n\n\n\n\n\n\n\n');
 
   const handleRunQuery = () => {
     setIsFetching(true);

@@ -48,8 +48,10 @@ const TableSection = React.memo(({
             columns={result ? result.columns : []}
             data={result ? result.data : []}
             options={{
-              maxBodyHeight: '49vh',
+              maxBodyHeight: 'calc(100vh - 47px - 257px - 53px)',
               doubleHorizontalScroll: true,
+              toolbar: false,
+              pageSize: 10,
             }}
           />
         )}
