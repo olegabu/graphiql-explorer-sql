@@ -51,6 +51,7 @@
   background-color: unset;
 }
 
+.MuiTypography-root.MuiTypography-caption,
 .MuiTablePagination-select.MuiInputBase-input {
   font-feature-settings: normal;
   font-variant-caps: normal;
