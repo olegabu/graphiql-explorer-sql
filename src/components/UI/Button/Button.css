@@ -1,0 +1,27 @@
+button {
+  cursor: pointer;
+  position: relative;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button .button-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: unset;
+  height: unset;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button .button-loader svg {
+  width: 20px;
+  height: 20px;
+}

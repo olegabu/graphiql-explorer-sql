@@ -1,3 +1,14 @@
+.error-container {
+  text-align: center;
+}
+
+.error-message {
+  color: #b11a04;
+  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
+  font-size: 13px;
+  text-align: center;
+}
+
 .head-col {
   color: #666;
 }

@@ -47,6 +47,10 @@ class Console extends Component {
     state = { schema: null, query: DEFAULT_QUERY, explorerIsOpen: true }
 
     componentDidMount() {
+        this.getSchema();
+    }
+
+    getSchema = () => {
         getData({
             query: getIntrospectionQuery(),
         }).then((result) => {
@@ -59,8 +63,8 @@ class Console extends Component {
             }
 
             this.setState({ schema: buildClientSchema(result.data) })
-        })
-    }
+        });
+    };
 
     _handleInspectOperation = (cm, mousePos) => {
         const parsedQuery = parse(this.state.query || "")
