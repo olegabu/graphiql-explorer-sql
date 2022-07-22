@@ -4,7 +4,7 @@ Example usage of [OneGraph](https://www.onegraph.com)'s open source [GraphiQL ex
 
 Sign up at [https://www.onegraph.com](https://www.onegraph.com).
 
-## Setup
+## Getting started
 
 1. Install dependencies:
 
@@ -14,20 +14,22 @@ npm install --force
 yarn install
 ```
 
+Alternatively, you can add .env file in the root folder of project to set environment variables.
+Example env file:
+```
+REACT_APP_GRAPH_QL_URL = 'https://starknet-archive.hasura.app/v1/graphql' // Hasura GraphQL url
+REACT_APP_GRAPH_QL_SUBSCRIPTION_URL = 'wss://starknet-archive.hasura.app/v1/graphql' // Hasura GraphQL socket url
+REACT_APP_SQL_QUERY_URL = 'https://starknet-archive.hasura.app/v2/query'  // Hasura SQL query url
+REACT_APP_DEFAULT_QUERY = 'Welcome world!'  // Welcome text for the GraphQL query window
+```
+If you do not specify these variables, their values will be default.  The default values can be viewed in the file: src/constants/constants.js
+
 2. Run the app with mock server:
 
 ```
 npm run dev:mock
 # or
 yarn dev:mock
-```
-
-Run the app:
-
-```
-npm run start
-# or
-yarn start
 ```
 
 Your browser will automatically open to http://localhost:3000 with the explorer open.
