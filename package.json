@@ -48,9 +48,9 @@
     "autoprefixer": "^10.4.0",
     "flow-bin": "^0.91.0",
     "gh-pages": "^2.0.1",
-    "json-server": "^0.17.0",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^2.2.19",
+    "express": "^4.18.1"
   }
 }

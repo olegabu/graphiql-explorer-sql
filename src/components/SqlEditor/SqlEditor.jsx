@@ -21,7 +21,12 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
     setIsRunQuery(true);
     setIsCreateView(false);
 
-    fetch(`${SQL_QUERY_URL}?query=${query}`)
+    fetch(SQL_QUERY_URL, {
+      method: 'POST',
+      body: JSON.stringify({
+        query,
+      }),
+    })
       .then((response) => response.text())
       .then((responseBody) => {
         try {
@@ -35,30 +40,38 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
           throw response.error;
         }
 
-        if (response.result_type === "TuplesOk") {
-          if (response.result.length > 0) {
-            setResult({
-              columns: response.result[0]
-                .map(column => ({ title: column, field: column })),
-              data: response.result
-                .slice(1)
-                .map(row => row.reduce((acc, item, index) => ({ ...acc, [response.result[0][index]]: item }), {})),
-            });
-          }
+        if (response.result && response.result.length > 0) {
+          setResult({
+            columns: response.result[0]
+              .map(column => ({ title: column, field: column })),
+            data: response.result
+              .slice(1)
+              .map(row => row.reduce((acc, item, index) => ({ ...acc, [response.result[0][index]]: item }), {})),
+          });
         }
         setIsFetching(false);
       })
       .catch((error) => {
-        toast.error(error);
+        if (typeof error === 'string') {
+          toast.error(error);
+        } else {
+          toast.error(error.message);
+        }
         setIsFetching(false);
       });
   }
 
-  const handleCreateView = (query) => {
+  const handleCreateView = (query, viewName) => {
     setIsFetching(true);
     setIsCreateView(true);
 
-    fetch(`${SQL_QUERY_URL}?query=${query}`)
+    fetch(SQL_QUERY_URL, {
+      method: 'POST',
+      body: JSON.stringify({
+        query,
+        viewName,
+      }),
+    })
       .then((response) => response.text())
       .then((responseBody) => {
         try {
@@ -72,7 +85,12 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
         setIsFetching(false);
         onUpdateConsole();
       })
-      .catch(() => {
+      .catch((error) => {
+        if (typeof error === 'string') {
+          toast.error(error);
+        } else {
+          toast.error(error.message);
+        }
         setIsFetching(false);
       });
   }

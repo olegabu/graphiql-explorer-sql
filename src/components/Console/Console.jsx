@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from "react"
 import GraphiQL from "graphiql"
 import GraphiQLExplorer from "graphiql-explorer"
@@ -21,26 +19,21 @@ const fetcher = createGraphiQLFetcher({
 });
 
 
-function getData(params) {
-    return fetch("https://starknet-archive.hasura.app/v1/graphql", {
-        method: "POST",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
+const getData = (params) => {
+    return fetch(GRAPH_QL_URL, {
+        method: 'POST',
         body: JSON.stringify(params),
     })
-        .then(function(response) {
-            return response.text()
-        })
-        .then(function(responseBody) {
-            try {
-                return JSON.parse(responseBody)
-            } catch (e) {
-                return responseBody
-            }
-        })
+      .then((response) => response.text())
+      .then((responseBody) => {
+          try {
+              return JSON.parse(responseBody)
+          } catch (e) {
+              return responseBody
+          }
+      })
 }
+
 
 class Console extends Component {
     _graphiql
@@ -178,4 +171,4 @@ class Console extends Component {
     }
 }
 
-export default Console
+export default Console;

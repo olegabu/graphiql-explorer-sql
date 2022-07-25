@@ -4,11 +4,12 @@ import "ace-builds/src-min-noconflict/ext-language_tools"
 import "ace-builds/src-min-noconflict/mode-mysql"
 import "ace-builds/src-noconflict/theme-github"
 
+import { DEFAULT_SQL_QUERY } from '../../../constants/constants';
 import Button from "../../UI/Button/Button";
 import "./editor.css";
 
 const Editor = ({ onCreateView, onRunQuery }) => {
-  const [value, setValue] = useState('select * from customers \n\n\n\n\n\n\n\n\n');
+  const [value, setValue] = useState(DEFAULT_SQL_QUERY);
   const [isCreateView, setIsCreateView] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
   const [viewName, setViewName] = useState('');
@@ -30,7 +31,7 @@ const Editor = ({ onCreateView, onRunQuery }) => {
     const query = value.toLowerCase();
     const viewNameTrim = viewName.trim();
     if (viewNameTrim) {
-      onCreateView(query);
+      onCreateView(query, viewNameTrim);
     } else {
       setIsInvalid(true);
     }
