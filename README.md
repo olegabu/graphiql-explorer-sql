@@ -39,12 +39,33 @@ http://localhost:8080/ - mock server
 
 
 ## Build
+1. Install dependencies:
 
+```
+npm install --force
+# or
+yarn install
+```
+
+Alternatively, you can add .env file in the root folder of project to set environment variables.
+Example env file:
+```
+REACT_APP_GRAPH_QL_URL = 'https://starknet-archive.hasura.app/v1/graphql' // GraphQL url
+REACT_APP_GRAPH_QL_SUBSCRIPTION_URL = 'wss://starknet-archive.hasura.app/v1/graphql' // GraphQL socket url
+REACT_APP_SQL_QUERY_URL = 'https://starknet-archive.hasura.app/v2/query'  // SQL query url
+REACT_APP_DEFAULT_QUERY = 'Welcome world!'  // Welcome text for the GraphQL query window
+REACT_APP_DEFAULT_SQL_QUERY = 'select * from customers'  // default SQL query for the SQL editor
+```
+If you do not specify these variables, their values will be default.  The default values can be viewed in the file: src/constants/constants.js
+
+2. Create the production build
 ```
 npm run build
 # or
 yarn build
 ```
+
+3. The build directory containing the production build is created within the root project folder. `build` folder.
 
 ## Live demo
 
