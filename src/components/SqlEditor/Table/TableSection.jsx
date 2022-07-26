@@ -16,6 +16,7 @@ const TableSection = React.memo(({
   error,
   result,
   success,
+  isRunQuery,
 }) => {
   if (success) {
     return (
@@ -43,8 +44,8 @@ const TableSection = React.memo(({
     )
   }
 
-  if (!(result && result.columns)) {
-    return null;
+  if (!isRunQuery) {
+    return;
   }
 
   return (
