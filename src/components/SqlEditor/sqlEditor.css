@@ -60,48 +60,33 @@
 }
 
 .ace_gutter {
-  width: 42px !important;
+  /*width: 42px !important;*/
 }
 
 .ace_gutter-layer {
-  border-right: 1px solid #ddd;
+  /*border-right: 1px solid #ddd;*/
   background-color: #f7f7f7;
   color: #666;
-  width: 42px !important;
+  /*width: 42px !important;*/
 }
 
 .ace_gutter-cell {
-  padding: 0 3px 0 5px;
+  /*padding: 0 3px 0 5px;*/
 }
 
 .ace_editor,
 .ace_scroller,
 .ace_content {
-  line-height: inherit !important;
+  /*line-height: inherit !important;*/
 }
 
-.ace_scroller {
-  left: 42px !important;
-}
+/*.ace_scroller {*/
+/*  left: 42px !important;*/
+/*}*/
 
 .ace_content {
-  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
-  font-size: 13px;
-}
-
-.ace_gutter-cell::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -100%;
-  background-color: #e8e8e8;
-}
-
-.left-side {
-  background-color: #e8e8e8;
-  width: 41px;
-  height: 20px;
+  /*font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;*/
+  /*font-size: 13px;*/
 }
 
 .docExplorerResizer {

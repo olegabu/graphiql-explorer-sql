@@ -39,7 +39,7 @@ const Editor = ({ onCreateView, onRunQuery }) => {
 
   return (
       <main className="col-start-1 col-end-3 row-start-2 row-end-3">
-        <div className="space" />
+        {/*<div className="space" />*/}
         <label htmlFor="editor">
             <AceEditor
                 id="editor"
