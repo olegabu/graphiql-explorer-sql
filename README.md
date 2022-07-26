@@ -55,6 +55,7 @@ REACT_APP_GRAPH_QL_SUBSCRIPTION_URL = 'wss://starknet-archive.hasura.app/v1/grap
 REACT_APP_SQL_QUERY_URL = 'https://starknet-archive.hasura.app/v2/query'  // SQL query url
 REACT_APP_DEFAULT_QUERY = 'Welcome world!'  // Welcome text for the GraphQL query window
 REACT_APP_DEFAULT_SQL_QUERY = 'select * from customers'  // default SQL query for the SQL editor
+PUBLIC_URL = '' // url to which you are deploying the app
 ```
 If you do not specify these variables, their values will be default.  The default values can be viewed in the file: src/constants/constants.js
 

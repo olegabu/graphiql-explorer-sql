@@ -15,11 +15,15 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
   const [isRunQuery, setIsRunQuery] = useState(false);
   const [result, setResult] = useState(null);
   const [isCreateView, setIsCreateView] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const handleRunQuery = (query) => {
     setIsFetching(true);
     setIsRunQuery(true);
     setIsCreateView(false);
+    setError('');
+    setSuccess('');
 
     fetch(SQL_QUERY_URL, {
       method: 'POST',
@@ -53,9 +57,9 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
       })
       .catch((error) => {
         if (typeof error === 'string') {
-          toast.error(error);
+          setError(error);
         } else {
-          toast.error(error.message);
+          setError(error.message);
         }
         setIsFetching(false);
       });
@@ -64,6 +68,8 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
   const handleCreateView = (query, viewName) => {
     setIsFetching(true);
     setIsCreateView(true);
+    setError('');
+    setSuccess('');
 
     fetch(SQL_QUERY_URL, {
       method: 'POST',
@@ -81,15 +87,15 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
         }
       })
       .then(() => {
-        toast.success('View was successfully created');
+        setSuccess('View was successfully created');
         setIsFetching(false);
         onUpdateConsole();
       })
       .catch((error) => {
         if (typeof error === 'string') {
-          toast.error(error);
+          setError(error);
         } else {
-          toast.error(error.message);
+          setError(error.message);
         }
         setIsFetching(false);
       });
@@ -126,6 +132,8 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
                   <TableSection
                     isFetching={!isCreateView && isFetching}
                     result={result}
+                    error={error}
+                    success={success}
                   />
                 )
               }

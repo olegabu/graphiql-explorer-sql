@@ -1,13 +1,53 @@
-.error-container {
-  text-align: center;
+.error-block {
+  display: flex;
+  justify-content: center;
+  color: #b11a04;
+  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
+  background-color: rgba(177, 26, 4, 0.2);
+  margin: 15px 2em 0 2em;
+  padding: 0.8em;
 }
 
 .error-message {
-  color: #b11a04;
-  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
+  display: flex;
+  justify-content: center;
+  flex: 1;
   font-size: 13px;
-  text-align: center;
 }
+
+.error-message svg {
+  fill: #b11a04;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.success-block {
+  display: flex;
+  justify-content: center;
+  color: #1f61a0;
+  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
+  background-color: rgba(31, 97, 160, 0.2);
+  margin: 15px 2em 0 2em;
+  padding: 0.8em;
+}
+
+.success-message {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  font-size: 13px;
+}
+
+.success-message svg {
+  fill: #1f61a0;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
 
 .head-col {
   color: #666;
