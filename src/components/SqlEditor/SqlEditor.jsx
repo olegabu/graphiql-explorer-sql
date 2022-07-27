@@ -89,7 +89,7 @@ const SqlEditor = ({ onClose, onUpdateConsole }) => {
         <div className="sql-editor-content">
           <div className="header">
             <div className="header-title">
-              SQL Editor
+              SQL
             </div>
             <div className="doc-explorer-rhs" onClick={onClose}>
               <div className="close-icon">✕</div>

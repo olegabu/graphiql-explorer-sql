@@ -157,12 +157,12 @@ class Console extends Component {
                         <GraphiQL.Button
                             onClick={this._handleToggleExplorer}
                             label="Explorer"
-                            title="Toggle Explorer"
+                            title="Toggle GraphQL Explorer"
                         />
                         <GraphiQL.Button
                             onClick={this.props.handleSqlEditorVisible}
-                            label="SQL Editor"
-                            title="Show Editor"
+                            label="SQL"
+                            title="Toggle SQL Editor"
                         />
                     </GraphiQL.Toolbar>
                 </GraphiQL>
