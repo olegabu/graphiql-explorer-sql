@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "GraphQL SQL",
+  "name": "GraphiQL Explorer and SQL Editor web application",
   "icons": [
     {
       "src": "favicon.ico",

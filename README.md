@@ -1,83 +1,68 @@
-Example usage of [OneGraph](https://www.onegraph.com)'s open source [GraphiQL explorer](https://github.com/OneGraph/graphiql-explorer).
+# GraphQL and SQL editor web application
 
-[OneGraph](https://www.onegraph.com) provides easy, consistent access to the APIs that underlie your business--all through the power of GraphQL.
+This is a single page React web app to edit GraphQL and SQL based on a
+popular [GraphiQL IDE](https://github.com/graphql/graphiql) with
+[GraphQL schema Explorer](https://github.com/OneGraph/graphiql-explorer)
+and a SQL Editor.
 
-Sign up at [https://www.onegraph.com](https://www.onegraph.com).
-
-## Getting started
-
-1. Install dependencies:
-
-```
-npm install --force
-# or
-yarn install
-```
-
-Alternatively, you can add .env file in the root folder of project to set environment variables.
-Example env file:
-```
-REACT_APP_GRAPH_QL_URL = 'https://starknet-archive.hasura.app/v1/graphql' // Hasura GraphQL url
-REACT_APP_GRAPH_QL_SUBSCRIPTION_URL = 'wss://starknet-archive.hasura.app/v1/graphql' // Hasura GraphQL socket url
-REACT_APP_SQL_QUERY_URL = 'https://starknet-archive.hasura.app/v2/query'  // Hasura SQL query url
-REACT_APP_DEFAULT_QUERY = 'Welcome world!'  // Welcome text for the GraphQL query window
-REACT_APP_DEFAULT_SQL_QUERY = 'select * from customers'  // default SQL query for the SQL editor
-```
-If you do not specify these variables, their values will be default.  The default values can be viewed in the file: src/constants/constants.js
-
-2. Run the app with mock server:
-
-```
-npm run dev:mock
-# or
-yarn dev:mock
-```
-
-Run the app without mock server:
-
-```
-npm run start
-# or
-yarn start
-```
-
-Your browser will automatically open to http://localhost:3000 with the explorer open.
-
-http://localhost:8080/ - mock server
-
-
+- GraphiQL lets you edit GraphQL queries and send them to a GraphQL
+  server
+- Explorer queries the GraphQL server for its schema and shows it in a
+  tree view to help craft your queries
+- SQL editor lets you 
+  - send queries to your API server and view results in a paginated
+    table
+  - send create view commands to your API which can turn them into
+    GraphQL queries and add them to your GraphQL schema
+    
 ## Build
-1. Install dependencies:
 
-```
+Install dependencies:
+
+```bash
 npm install --force
 # or
 yarn install
 ```
 
-Alternatively, you can add .env file in the root folder of project to set environment variables.
-Example env file:
+Specify endpoints and default queries in environment variables:
+```bash
+REACT_APP_GRAPHQL_URL = 'https://yourgraphqlapiserver/v1/graphql' # GraphQL server endpoint
+REACT_APP_GRAPHQL_SUBSCRIPTION_URL = 'wss://yourgraphqlapiserver/v1/graphql' # GraphQL server websocket endpoint
+REACT_APP_SQL_URL = 'https://yoursqlapiserver/sql'  # SQL query endpoint url
+REACT_APP_DEFAULT_GRAPHQL_QUERY = '{ event(limit: 10) { name } }'  # default query for the GraphQL editor
+REACT_APP_DEFAULT_SQL_QUERY = 'select * from event limit 10'  # default query for the SQL editor
 ```
-REACT_APP_GRAPH_QL_URL = 'https://starknet-archive.hasura.app/v1/graphql' // GraphQL url
-REACT_APP_GRAPH_QL_SUBSCRIPTION_URL = 'wss://starknet-archive.hasura.app/v1/graphql' // GraphQL socket url
-REACT_APP_SQL_QUERY_URL = 'https://starknet-archive.hasura.app/v2/query'  // SQL query url
-REACT_APP_DEFAULT_QUERY = 'Welcome world!'  // Welcome text for the GraphQL query window
-REACT_APP_DEFAULT_SQL_QUERY = 'select * from customers'  // default SQL query for the SQL editor
-PUBLIC_URL = '' // url to which you are deploying the app
-```
-If you do not specify these variables, their values will be default.  The default values can be viewed in the file: src/constants/constants.js
 
-2. Create the production build
+If deploying to a non root url set:
+```bash
+PUBLIC_URL = 'http://yourwebserver/console'
 ```
+
+You can put these in a `.env` file in project's root or directly in
+code in [./src/constants/constants.js](./src/constants/constants.js).
+
+Build the web app for deployment to a web server.
+```bash
 npm run build
 # or
 yarn build
 ```
 
-3. The build directory containing the production build is created within the root project folder. `build` folder.
+## Development
 
-## Live demo
+Serve the app in a development server. Your browser will automatically
+open to [http://localhost:3000](http://localhost:3000).
+```bash
+npm run start
+# or
+yarn start
+```
 
-The example app is deployed to GitHub pages at [https://onegraph.github.io/graphiql-explorer-example/](https://onegraph.github.io/graphiql-explorer-example/) and is in use in production at [https://www.onegraph.com/graphiql](https://www.onegraph.com/graphiql).
-
-![Preview](https://user-images.githubusercontent.com/476818/51567716-c00dfa00-1e4c-11e9-88f7-6d78b244d534.gif)
+Serve the app and start a [mock SQL API](./mock) server at
+[http://localhost:8080](http://localhost:8080).
+```bash
+npm run dev:mock
+# or
+yarn dev:mock
+```
