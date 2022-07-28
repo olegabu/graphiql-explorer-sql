@@ -3,6 +3,7 @@ import GraphiQL from "graphiql"
 import GraphiQLExplorer from "graphiql-explorer"
 import { buildClientSchema, getIntrospectionQuery } from "graphql"
 import { createGraphiQLFetcher } from '@graphiql/toolkit';
+import { Resizable } from 're-resizable';
 
 import { DEFAULT_QUERY, GRAPH_QL_URL, GRAPH_QL_SUBSCRIPTION_URL } from '../../constants/constants';
 import {
@@ -124,18 +125,28 @@ class Console extends Component {
         const { query, schema } = this.state
         return (
             <div className="graphiql-container">
-                <GraphiQLExplorer
-                    schema={schema}
-                    query={query}
-                    onEdit={this._handleEditQuery}
-                    onRunOperation={(operationName) =>
+                <Resizable
+                  defaultSize={{ width: '30vw' }}
+                  minWidth="5vw"
+                  maxWidth="50vw"
+                  axis="x"
+                  enable={{ right: true }}
+                  handleWrapperClass="sql-editor-handle-wrapper"
+                >
+                    <GraphiQLExplorer
+                      schema={schema}
+                      query={query}
+                      onEdit={this._handleEditQuery}
+                      onRunOperation={(operationName) =>
                         this._graphiql.handleRunQuery(operationName)
-                    }
-                    explorerIsOpen={this.state.explorerIsOpen}
-                    onToggleExplorer={this._handleToggleExplorer}
-                    getDefaultScalarArgValue={getDefaultScalarArgValue}
-                    makeDefaultArg={makeDefaultArg}
-                />
+                      }
+                      explorerIsOpen={this.state.explorerIsOpen}
+                      onToggleExplorer={this._handleToggleExplorer}
+                      getDefaultScalarArgValue={getDefaultScalarArgValue}
+                      makeDefaultArg={makeDefaultArg}
+                      width="100%"
+                    />
+                </Resizable>
                 <GraphiQL
                     ref={(ref) => (this._graphiql = ref)}
                     fetcher={fetcher}
